@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netflix codes.Android", "Netflix codes\Netflix codes.Android\Netflix codes.Android.csproj", "{0A9D62E1-77B1-42AF-AE00-7F238E70FA5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netflix codes", "Netflix codes\Netflix codes\Netflix codes.csproj", "{C3C98C93-0A8A-429D-BE78-80BB38E7C31C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A9D62E1-77B1-42AF-AE00-7F238E70FA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9D62E1-77B1-42AF-AE00-7F238E70FA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9D62E1-77B1-42AF-AE00-7F238E70FA5E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0A9D62E1-77B1-42AF-AE00-7F238E70FA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9D62E1-77B1-42AF-AE00-7F238E70FA5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9D62E1-77B1-42AF-AE00-7F238E70FA5E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C3C98C93-0A8A-429D-BE78-80BB38E7C31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C98C93-0A8A-429D-BE78-80BB38E7C31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C98C93-0A8A-429D-BE78-80BB38E7C31C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C3C98C93-0A8A-429D-BE78-80BB38E7C31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C98C93-0A8A-429D-BE78-80BB38E7C31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C98C93-0A8A-429D-BE78-80BB38E7C31C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B1F8217-7ED4-4D0F-8BFC-7DD246D388F8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Netflix_codes.Showed"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#0f0f0f">
+
+    <Frame Padding="0">
+        <Frame.Background>
+            <LinearGradientBrush StartPoint="2, 1" EndPoint="2, 2">
+                <GradientStop Color="#290301" Offset="-1"/>
+                <GradientStop Color="#a61802" Offset="1"/>
+                <GradientStop Color="#a61802" Offset="1" />
+            </LinearGradientBrush>
+        </Frame.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="0.7*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ImageButton
+                    Source="arrow.png"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="50"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Margin="20, 55, 0, 0"
+                    BackgroundColor="Transparent"
+                    Clicked="back_clicked"
+                    ></ImageButton>
+                <ImageButton
+                    x:Name="favorite_icon"
+                    Source="favorite_plus.png"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="50"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Margin="0, 55, 25, 0"
+                    BackgroundColor="Transparent"
+                    Clicked="favorite_clicked"
+                    ></ImageButton>
+                <Label
+                    Grid.Row="1"
+                    VerticalOptions="End"
+                    Margin="20, 0, 0, 0"
+                    HorizontalOptions="Start"
+                    FontSize="35"
+                    TextColor="#e6e1e1"
+                    FontFamily="PoppinsBold"
+                    LineHeight="0.85">Some movies</Label>
+            </Grid>
+            
+            <BoxView
+                Grid.Row="1"
+                BackgroundColor="#0f0f0f"
+                CornerRadius="25"></BoxView>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Frame
+                    BackgroundColor="#1a1a1a" 
+                    CornerRadius="25" 
+                    Grid.Row="0"
+                    Margin="10, 20, 10 , 0">
+                    <StackLayout BackgroundColor="Transparent">
+                        <Label
+                            FontFamily="PoppinsBold"
+                            TextColor="#e6e1e1"
+                            FontSize="15"
+                            Margin="10, 0, 0, 0">Code</Label>
+                        <Frame
+                            Padding="20, 15, 0, 15"
+                            CornerRadius="15"
+                            BackgroundColor="#131313"
+                            BorderColor="#A7A7A7"
+                            x:Name="code_frame">
+                            <Label
+                                x:Name="code_data"
+                                FontFamily="PoppinsLight"
+                                FontSize="15"
+                                VerticalOptions="Center">5697874</Label>
+                        </Frame>
+                        <Label
+                            FontFamily="PoppinsBold"
+                            TextColor="#e6e1e1"
+                            FontSize="15"
+                            Margin="10, 20, 0, 0">URL adress</Label>
+                        <Frame
+                            Padding="20, 15, 20, 15"
+                            CornerRadius="15"
+                            BackgroundColor="#131313"
+                            BorderColor="#A7A7A7">
+                            <ScrollView Orientation="Horizontal">
+                                <Label
+                                x:Name="url_data"
+                                FontFamily="PoppinsLight"
+                                FontSize="15"
+                                VerticalOptions="Center">https://www.netflix.com/browse/somemovies</Label>
+                            </ScrollView>
+                            
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+
+                <Button 
+                    Grid.Row="2"
+                    BackgroundColor="#1a1a1a"
+                    TextColor="#e6e1e1"
+                    Margin="10, 0, 10, 5"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Text="Copy"
+                    TextTransform="None"
+                    FontSize="20"
+                    FontFamily="PoppinsMedium"
+                    Clicked="copy_clicked"
+                    ></Button>
+                <Button 
+                    Grid.Row="3"
+                    BackgroundColor="#a1231a"
+                    TextColor="#e6e1e1"
+                    Margin="10, 0, 10, 30"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Text="Open on Netflix"
+                    TextTransform="None"
+                    FontSize="20"
+                    FontFamily="PoppinsMedium"
+                    Clicked="open_clicked"
+                    ></Button>
+
+
+            </Grid>
+        </Grid>
+    </Frame>
+
+</ContentPage>
