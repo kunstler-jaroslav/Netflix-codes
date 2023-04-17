@@ -15,20 +15,26 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.25*"></RowDefinition>
-                <RowDefinition Height="0.75*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label
-                VerticalOptions="Start"
-                Margin="0, 60, 0, 0"
-                HorizontalOptions="Center"
-                FontSize="90"
-                TextColor="#E50914"
-                FontFamily="Bebas">NETFLIX</Label>
+            <Frame BackgroundColor="Transparent" Margin="0" Padding="30, 80, 0, 10">
+                <Image Source="logo.png" HorizontalOptions="Start"></Image>
+            </Frame>
+            
+            
+            
+            
             <BoxView
                 Grid.Row="1"
+                Grid.RowSpan="2"
                 BackgroundColor="#0f0f0f"
                 CornerRadius="25"></BoxView>
-            <Grid Grid.Row="1">
+            <BoxView
+                Grid.Row="2"
+                BackgroundColor="#0f0f0f"></BoxView>
+            <ScrollView Grid.Row="1" Grid.RowSpan="2" Margin="0, 10, 0, 0">
+            <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
@@ -45,18 +51,36 @@
                             FontFamily="PoppinsBold"
                             TextColor="#e6e1e1"
                             FontSize="15"
-                            Margin="10, 0, 0, 0">Chose gener</Label>
-                        <Button
+                            Margin="10, 0, 0, 0">Chose genre</Label>
+                        <Grid>
+                            <Frame
+                            Padding="20, 15, 0, 15"
+                            CornerRadius="15"
+                            BackgroundColor="#131313"
+                            BorderColor="#A7A7A7"
+                            x:Name="gener_frame">
+                                <Label
+                                x:Name="gener_data"
+                                FontFamily="PoppinsLight"
+                                FontSize="15"
+                                TextColor="#A7A7A7"
+                                VerticalOptions="Center">genre</Label>
+                            </Frame>
+                            <Button
                             CornerRadius="15"
                             BackgroundColor="#131313"
                             BorderColor="#A7A7A7"
                             BorderWidth="0.4"
-                            Text="gener...."
-                            Padding="10, 0, 220, 0"
+                            Padding="20, 15, 0, 15"
                             TextTransform="Lowercase"
                             TextColor="#A7A7A7"
                             FontAttributes="Italic"
-                            Margin="0, 10, 0, 0"></Button>
+                            Margin="0, 0, 0, 0"
+                            Opacity="0"
+                            Clicked="gener_clicked"></Button>
+                        </Grid>
+                        
+                        
                     </StackLayout>
                 </Frame>
 
@@ -72,26 +96,79 @@
                             TextColor="#e6e1e1"
                             FontSize="15"
                             Margin="10, 0, 0, 0"
-                            >Chose subgener</Label>
+                            >Chose subgenre</Label>
+                        <Grid>
+                            <Frame
+                            Padding="20, 15, 0, 15"
+                            CornerRadius="15"
+                            BackgroundColor="#131313"
+                            BorderColor="#A7A7A7"
+                            x:Name="subgener_frame">
+                                <Label
+                                x:Name="subgener_data"
+                                FontFamily="PoppinsLight"
+                                FontSize="15"
+                                TextColor="#A7A7A7"
+                                VerticalOptions="Center">subgenre</Label>
+                            </Frame>
+                            <Button
+                            CornerRadius="15"
+                            BackgroundColor="#131313"
+                            BorderColor="#A7A7A7"
+                            BorderWidth="0.4"
+                            Padding="20, 15, 0, 15"
+                            TextTransform="Lowercase"
+                            TextColor="#A7A7A7"
+                            FontAttributes="Italic"
+                            Margin="0, 0, 0, 0"
+                            Opacity="0"
+                            Clicked="subgener_clicked"></Button>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                    <Grid Grid.Row="2" VerticalOptions="Start" Margin="10, 30, 10 ,0"  Padding="20, 0, 20, 0">
+                        <Frame
+                            Padding="20, 15, 0, 15"
+                            CornerRadius="15"
+                            BackgroundColor="#131313"
+                            BorderColor="#A7A7A7">
+                            <Grid Padding="0" Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="40"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column = "1" Source="favorite_minus.png" Margin="0, 0, 20, 0"></Image>
+"
+                                <Label
+                                    Grid.Column = "0"
+                                FontFamily="PoppinsLight"
+                                FontSize="15"
+                                TextColor="#A7A7A7"
+                                VerticalOptions="Center">favorites</Label>
+                            </Grid>
+                            
+                            
+                        </Frame>
                         <Button
                             CornerRadius="15"
                             BackgroundColor="#131313"
                             BorderColor="#A7A7A7"
                             BorderWidth="0.4"
-                            Text="subgener"
-                            Padding="10, 0, 200, 0"
+                            Padding="20, 15, 0, 15"
                             TextTransform="Lowercase"
                             TextColor="#A7A7A7"
                             FontAttributes="Italic"
-                            Margin="0, 10, 0, 0"></Button>
-                    </StackLayout>
-                </Frame>
+                            Margin="0, 0, 0, 0"
+                            Opacity="0"
+                            Clicked="favorites_clicked"></Button>
+                    </Grid>
 
-                <Button 
+                    <Button 
                     Grid.Row="3"
                     BackgroundColor="#a1231a"
                     TextColor="#e6e1e1"
-                    Margin="10, 0, 10, 30"
+                    Margin="10, 0, 10, 10"
                     CornerRadius="15"
                     HeightRequest="60"
                     Text="Show code"
@@ -102,6 +179,7 @@
 
 
             </Grid>
+            </ScrollView>
         </Grid>
     </Frame>
 

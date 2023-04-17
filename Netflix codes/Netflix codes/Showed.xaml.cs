@@ -15,12 +15,15 @@ namespace Netflix_codes
     {
         bool favorite = false;
         MainPage parent = null;
-        public Showed(string code, string url, bool favorite, MainPage parent)
+        public Showed(string code, string url, bool favorite, string name,MainPage parent)
         {
             InitializeComponent();
             code_data.Text = code;
             url_data.Text = url;
+            name_label.Text = name;
             this.favorite = favorite;
+            if(favorite)
+                favorite_icon.Source = "favorite_minus.png";
             this.parent = parent;
         }
 
@@ -57,10 +60,12 @@ namespace Netflix_codes
             favorite = !favorite;
             parent.Favorite = favorite;
             if (favorite)
+            {
                 favorite_icon.Source = "favorite_minus.png";
+                parent.add_code(int.Parse(code_data.Text));
+            }
             else
                 favorite_icon.Source = "favorite_plus.png";
-
         }
     }
 }

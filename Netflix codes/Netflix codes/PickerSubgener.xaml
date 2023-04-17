@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Netflix_codes.PickerSubgener"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:Netflix_codes="clr-namespace:Netflix_codes">
+
+    <Frame Padding="0" BackgroundColor="#0f0f0f">
+        <Grid BackgroundColor="#0f0f0f" Margin="0" Padding="0" ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame BackgroundColor="#290301" HeightRequest="10" Grid.Row="0"></Frame>
+            <Frame Grid.Row="0" CornerRadius="25" Grid.RowSpan="2" Padding="0, 0, 0, 10" Margin="0">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="2, 1" EndPoint="2, 2">
+                        <GradientStop Color="#290301" Offset="-1"/>
+                        <GradientStop Color="#910707" Offset="1"/>
+
+                        <!--<GradientStop Color="#a61802" Offset="1" />-->
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton
+                            Source="arrow.png"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HeightRequest="50"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            Margin="20, 48, 0, 0"
+                            BackgroundColor="Transparent"
+                            Clicked="back_clicked"
+                            ></ImageButton>
+                    <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            VerticalOptions="Start"
+                            Margin="0, 55, 30, 0"
+                            HorizontalOptions="End"
+                            FontSize="30"
+                            TextColor="#e6e1e1"
+                            FontFamily="Bebas"
+                            LineHeight="0.85">Subgenres</Label>
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="2" Grid.RowSpan="2" BackgroundColor="#0f0f0f" Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.02*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ScrollView Grid.Row="1" Grid.RowSpan="3">
+                    <ListView ItemsSource="{Binding DataSource}" x:Name="ListView" RowHeight="100" SeparatorColor="Transparent" ItemSelected="ListView_Selected" ItemTapped="ListView_Tapped">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="50">
+                                    <Frame
+                                        BackgroundColor="#131313"
+                                        CornerRadius="15"
+                                        Margin="10, 5, 10, 5">
+                                        <!--="#131313"-->
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Frame
+                                                VerticalOptions="Center"
+                                                Grid.Column="0"
+                                                WidthRequest="50"
+                                                HeightRequest="50"
+                                                HorizontalOptions="Center"
+                                                CornerRadius="15"
+                                                Padding="0">
+                                                <Frame.Background>
+                                                    <LinearGradientBrush StartPoint="1, 0" EndPoint="1,1">
+                                                        <GradientStop Color="#690000" Offset="1"/>
+                                                        <GradientStop Color="#191319" Offset="-1"/>
+                                                    </LinearGradientBrush>
+                                                </Frame.Background>
+                                                <Label
+                                                    Text="{Binding Letter}"
+                                                    TextColor="White"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    FontSize="20"
+                                                    FontFamily="PoppinsMedium"
+                                                    ></Label>
+                                            </Frame>
+                                            <Label 
+                                               Grid.Column="1"
+                                               Text="{Binding Name}"
+                                               TextColor="White"
+                                               Grid.Row="0"
+                                               VerticalOptions="Center"
+                                                FontFamily="PoppinsLight"
+                                                FontSize="18"></Label>
+                                        </Grid>
+                                    </Frame>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+                <Frame
+                    Grid.Row="1">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="1, 0" EndPoint="1,1">
+                            <GradientStop Color="#0f0f0f" Offset="1"/>
+                            <GradientStop Color="Transparent" Offset="-1"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                </Frame>
+
+                <Frame
+                    Grid.Row="3">
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="1, 0" EndPoint="1,1">
+                            <GradientStop Color="Transparent" Offset="-1"/>
+                            <GradientStop Color="#0f0f0f" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                </Frame>
+
+                <Button 
+                    Grid.Row="4"
+                    BackgroundColor="#272727"
+                    TextColor="#e6e1e1"
+                    Margin="10, 0, 10, 10"
+                    CornerRadius="15"
+                    HeightRequest="60"
+                    Text="You need to select gener"
+                    TextTransform="None"
+                    FontSize="20"
+                    FontFamily="PoppinsMedium"
+                    Clicked="continue_clicked"
+                    x:Name="Continue_btn"></Button>
+            </Grid>
+        </Grid>
+    </Frame>
+
+</ContentPage>
